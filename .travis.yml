@@ -6,6 +6,7 @@ addons:
       # Package list from http://bazel.io/docs/install.html.
       - g++
       - oracle-java8-installer
+      - openjdk-8-jdk
       - pkg-config
       - zip
       - zlib1g-dev
