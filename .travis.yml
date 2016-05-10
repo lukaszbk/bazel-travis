@@ -2,10 +2,11 @@
 addons:
   apt:
     packages:
+      wget
       # ----------------------------------------------------------------------
       # Package list from http://bazel.io/docs/install.html.
       - g++
-      - openjdk-8-jdk
+      - oracle-java8-installer
       - pkg-config
       - zip
       - zlib1g-dev
@@ -16,13 +17,12 @@ before_install:
   - export PROJECT_DIR=$(pwd)
 
 # ----------------------------------------------------------------------------
-# Cemmands to install dependencies necessary to build / run the project:
+# Cemmands to install dependencies necessary to build / test the project:
 install:
-  # --------------------------------------------------------------------------
+  - cd $HOME
   # Install Bazel.
   - BAZEL_VERSION=0.2.2b
   - BAZEL_INSTALLER=bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh
-  - cd $HOME
   - wget https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/${BAZEL_INSTALLER}
   - chmod +x $BAZEL_INSTALLER
   - ./$BAZEL_INSTALLER --user
