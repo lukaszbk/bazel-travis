@@ -31,7 +31,7 @@ install:
   - export PATH="$PATH:$HOME/bin"
   # Configure Bazel.
   # --------------------------------------------------------------------------
-  cat <<'EOF' >> .bazelrc
+  - cat <<'EOF' >> .bazelrc
 # This is so we don't use sandboxed execution. Sandboxed execution runs stuff
 # in a container, and since Travis already runs its script in a container
 # (unless you require sudo in your .travis.yml) this fails to run tests.
