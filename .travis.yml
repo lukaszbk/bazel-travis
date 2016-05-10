@@ -14,7 +14,7 @@ addons:
 # ----------------------------------------------------------------------------
 # Commands to prepare the system to install prerequisites or dependencies:
 before_install:
-  - set +x
+  - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
   - export PROJECT_DIR=$(pwd)
 
 # ----------------------------------------------------------------------------
@@ -26,7 +26,7 @@ install:
   - BAZEL_INSTALLER=bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh
   - wget https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/${BAZEL_INSTALLER}
   - chmod +x $BAZEL_INSTALLER
-  - JAVA_HOME=/usr/lib/jvm/java-8-oracle ./$BAZEL_INSTALLER --user
+  - ./$BAZEL_INSTALLER --user
   # Add Bazel to the path.
   - export PATH="$PATH:$HOME/bin"
 
