@@ -37,7 +37,7 @@ install:
   - echo 'build --spawn_strategy=standalone --genrule_strategy=standalone' > .bazelrc
   - echo 'test --test_strategy=standalone' >> .bazelrc
   # Enable printing the command lines of failed steps.
-  = echo 'build --verbose_failures' >> .bazelrc
+  - echo 'build --verbose_failures' >> .bazelrc
 
 # ----------------------------------------------------------------------------
 # Commands to prepare the project for testing:
